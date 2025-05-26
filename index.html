@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>click to run Method</title>
+</head>
+<body>
+<style>
+  #app{border:dashed 1px; width:100%; padding:0 20px 20px 20px;}
+  #app > div {width:80%; height:60px; background-color:lightgreen; padding:20px; font-weight:bold;}
+</style>
+  <div id="app">
+    <p>아래에 박스를 마우스로 클릭해 보세요</p>
+    <div v-on:click="changeText">
+      {{text}}
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          text: ''
+        }
+      },
+      methods:{
+        changeText(){
+          this.text = 'hello World!'
+        }
+      }
+    })
+
+   app.mount('#app')
+
+  </script>
+</body>
+</html>
